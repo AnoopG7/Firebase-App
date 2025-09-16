@@ -4,6 +4,7 @@
   <title>Dashboard</title>
   <script type="module" src="js/firebase-config.js"></script>
   <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
 </head>
 <body>
   <h2>Welcome to Dashboard</h2>
@@ -16,6 +17,23 @@
       <li><a href="index.html">Landing Page</a></li>
     </ul>
   </nav>
+
+<div id="metrics">
+    <h2>Overall Metrics</h2>
+    <p id="totalProperties">Total Properties: </p>
+    <p id="totalReports">Total Reports: </p>
+    <p id="avgPrice">Average Price: </p>
+    <p id="avgTrust">Average Trust Score: </p>
+  </div>
+
+  <hr>
+
+  <div id="allProperties">
+    <h2>Properties List</h2>
+    <div id="propertiesList"></div>
+  </div>
+
+  <button onclick="location.href='dashboard.html'">Refresh</button>
   <button onclick="logout()">Logout</button>
 </body>
 </html>
