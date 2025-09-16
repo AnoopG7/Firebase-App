@@ -3,11 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Welcome | Firebase App</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
 </head>
 <body>
-    <h1>Welcome to the Landing Page</h1>
-    <a href="login.html">Login</a> | <a href="register.html">Register</a>
+            <div class="container" style="max-width: 600px; margin-top: 48px;">
+                <!-- Hero Section -->
+                <div style="text-align:center; margin-bottom:32px;">
+                    <img src="https://img.icons8.com/color/96/000000/firebase.png" alt="Firebase Logo" style="width:72px; height:72px; margin-bottom:10px;">
+                    <h1 style="font-size:2.2rem; margin-bottom:8px; color:#222;">Firebase Property App</h1>
+                    <div style="font-size:1.18rem; color:#444; margin-bottom:10px;">Transparency for Real Estate Pricing</div>
+                    <div style="font-size:1.05rem; color:#666; margin-bottom:0;">List, review, and analyze properties with community trust.</div>
+                </div>
+
+                <!-- Quick Links -->
+                <nav class="mb-4">
+                    <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:16px; align-items:center;">
+                        <li><a class="auth-link" href="login.html">🔑 Login</a></li>
+                        <li><a class="auth-link" href="register.html">📝 Register</a></li>
+                        <li><a class="auth-link" href="dashboard.html">📊 Dashboard</a></li>
+                        <li><a class="auth-link" href="properties.html">🏠 Properties (CRUD)</a></li>
+                        <li><a class="auth-link" href="reports.html">🗣️ Reports (Community)</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Features Section -->
+                <div class="mb-4" style="background:#f8fafd; border-radius:12px; padding:22px 22px 12px 22px; border:1.5px solid #e3e8f0;">
+                    <h2 style="font-size:1.18rem; margin-bottom:12px; color:#222;">✨ Key Features</h2>
+                    <ul style="padding-left:20px; margin-bottom:0;">
+                        <li><b>Authentication</b> — Secure email/password login & registration</li>
+                        <li><b>Property Listings</b> — Add, view, and manage properties</li>
+                        <li><b>Community Reports</b> — Submit, edit, and view price/trust reports</li>
+                        <li><b>Aggregated Insights</b> — Average price/trust per property, global dashboard</li>
+                        <li><b>Dashboard</b> — All properties, reports, and metrics at a glance</li>
+                        <li><b>Modern UI</b> — Responsive, modular, and user-friendly</li>
+                        <li><b>Firebase Hosting</b> — Fast, secure, and scalable</li>
+                    </ul>
+                </div>
+
+                <!-- How it Works Section -->
+                <div class="mb-4" style="background:#fffbe7; border-radius:12px; padding:18px 20px 10px 20px; border:1.5px solid #ffe6a0;">
+                    <h2 style="font-size:1.13rem; margin-bottom:10px; color:#b8860b;">How it Works</h2>
+                    <ol style="padding-left:20px;">
+                        <li>Register or log in to your account</li>
+                        <li>Add a property with price and details</li>
+                        <li>View all properties and select one to see community reports</li>
+                        <li>Submit your own report on fair price and trust</li>
+                        <li>See live metrics and insights on the dashboard</li>
+                    </ol>
+                </div>
+
+                <!-- Demo & Repo -->
+                <div class="center mb-2" style="font-size:1.08rem; color:#666;">
+                    <b>Live Demo:</b> <a href="https://class-6a3ae.web.app/" target="_blank">class-6a3ae.web.app</a>
+                </div>
+                <div class="center mb-4" style="font-size:0.98rem; color:#888;">
+                    <b>GitHub:</b> <a href="https://github.com/AnoopG7/Firebase-App" target="_blank">AnoopG7/Firebase-App</a>
+                </div>
+
+                <!-- Footer -->
+                <div class="center" style="font-size:0.97rem; color:#aaa; margin-top:18px;">
+                    Built with <span style="color:#ffa611;">&#9733;</span> Firebase, Firestore, and modern web tech.<br>
+                    &copy; 2025 Anoop Gupta
+                </div>
+            </div>
 </body>
 </html>
