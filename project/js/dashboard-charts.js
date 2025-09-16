@@ -9,13 +9,13 @@ window.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function renderCharts() {
-  // Pie chart: Properties by type (sell/rent)
+  // Pie chart: Properties by category (sale/rent)
   const propSnapshot = await getDocs(collection(db, "properties"));
-  let sell = 0, rent = 0;
+  let sale = 0, rent = 0;
   propSnapshot.forEach(doc => {
     const p = doc.data();
-    if (p.type === 'sell') sell++;
-    else if (p.type === 'rent') rent++;
+    if (p.category === 'sale') sale++;
+    else if (p.category === 'rent') rent++;
   });
   const ctx1 = document.getElementById('chart-properties-type').getContext('2d');
   new window.Chart(ctx1, {
@@ -23,7 +23,7 @@ async function renderCharts() {
     data: {
       labels: ['Sale', 'Rent'],
       datasets: [{
-        data: [sell, rent],
+        data: [sale, rent],
         backgroundColor: ['#007bff', '#ffb300'],
       }]
     },
