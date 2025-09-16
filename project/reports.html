@@ -4,18 +4,20 @@
   <meta charset="utf-8">
   <title>Reports</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-  <script src="js/firebase-config.js" defer></script>
-  <script src="js/reports.js" defer></script>
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/reports.js"></script>
 </head>
 <body>
   <h1>Reports</h1>
 
+  <div id="allProperties">
+    <h2>All Properties</h2>
+    <ul id="propertiesList"></ul>
+  </div>
+
   <div id="propertyInfo"></div>
 
-  <form id="reportForm">
+  <form id="reportForm" style="display:none">
     <input id="reportedPrice" type="number" placeholder="What do you think is a fair price?" required><br>
     <label>Trust Score (1 = low trust, 5 = high trust)</label><br>
     <select id="trustScore">
