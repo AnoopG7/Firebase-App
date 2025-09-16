@@ -23,6 +23,7 @@ propertyForm.addEventListener("submit", async e => {
   const title = document.getElementById("propTitle").value.trim();
   const price = parseFloat(document.getElementById("propPrice").value);
   const description = document.getElementById("propDescription").value.trim();
+  const category = document.getElementById("propCategory").value;
 
   if (!currentUser) return alert("You must be logged in");
 
@@ -33,6 +34,7 @@ propertyForm.addEventListener("submit", async e => {
         title,
         price,
         description,
+        category,
         ownerUid: currentUser.uid,
         updatedAt: serverTimestamp()
       }, { merge: true });
@@ -43,6 +45,7 @@ propertyForm.addEventListener("submit", async e => {
         title,
         price,
         description,
+        category,
         ownerUid: currentUser.uid,
         createdAt: serverTimestamp()
       });
@@ -72,10 +75,11 @@ function renderProperties(snapshot) {
     div.innerHTML = `
       <h3>${escapeHtml(p.title)}</h3>
       <p>Price: ${p.price}</p>
+      <p>Category: <b>${escapeHtml(p.category || "-")}</b></p>
       <p>${escapeHtml(p.description || "")}</p>
       <p>Owner UID: ${p.ownerUid}</p>
       ${currentUser.uid === p.ownerUid ? `
-        <button onclick="editProperty('${docSnap.id}', '${escapeHtml(p.title)}', ${p.price}, '${escapeHtml(p.description || "")}')">Edit</button>
+        <button onclick="editProperty('${docSnap.id}', '${escapeHtml(p.title)}', ${p.price}, '${escapeHtml(p.description || "")}', '${escapeHtml(p.category || "")}')">Edit</button>
         <button onclick="deleteProperty('${docSnap.id}')">Delete</button>
       ` : ""}
       <hr>
@@ -85,11 +89,12 @@ function renderProperties(snapshot) {
 }
 
 // Edit property
-window.editProperty = function(id, title, price, description) {
+window.editProperty = function(id, title, price, description, category) {
   editingId = id;
   document.getElementById("propTitle").value = title;
   document.getElementById("propPrice").value = price;
   document.getElementById("propDescription").value = description;
+  if (category) document.getElementById("propCategory").value = category;
 }
 
 // Delete property

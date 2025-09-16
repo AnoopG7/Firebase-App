@@ -24,7 +24,7 @@
 
 5. **Type of property you were looking for:**  
    - Rent  
-   - Buy  
+   - Sell 
    - Both  
 
 6. **How did you search for properties?**  

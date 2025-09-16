@@ -14,7 +14,8 @@ Properties
 {
   "_id": "ObjectId",
   "ownerId": "ObjectId",           // reference to Users._id
-  "type": "string",                // buy, sell, rent
+  "type": "string",                // sale, rent
+  "category": "string",            // rent, sale
   "title": "string",               // e.g., "2BHK Apartment in Delhi"
   "description": "string",
   "location": {
