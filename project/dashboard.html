@@ -2,38 +2,40 @@
 <html>
 <head>
   <title>Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
   <script type="module" src="js/firebase-config.js"></script>
   <script type="module" src="js/auth.js"></script>
   <script type="module" src="js/dashboard.js"></script>
 </head>
 <body>
-  <h2>Welcome to Dashboard</h2>
-  <nav>
-    <ul>
-      <li><a href="properties.html">Properties (CRUD)</a></li>
-      <li><a href="reports.html">Reports (Community)</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="index.html">Landing Page</a></li>
-    </ul>
-  </nav>
+  <div class="container">
+    <h2 class="dashboard-title">Welcome to Dashboard</h2>
+    <nav>
+      <ul class="dashboard-nav">
+        <li><a href="properties.html">Properties (CRUD)</a></li>
+        <li><a href="reports.html">Reports (Community)</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="index.html">Landing Page</a></li>
+      </ul>
+    </nav>
 
-<div id="metrics">
-    <h2>Overall Metrics</h2>
-    <p id="totalProperties">Total Properties: </p>
-    <p id="totalReports">Total Reports: </p>
-    <p id="avgPrice">Average Price: </p>
-    <p id="avgTrust">Average Trust Score: </p>
+    <div id="metrics" class="dashboard-metrics mb-4">
+      <p id="totalProperties">Total Properties: </p>
+      <p id="totalReports">Total Reports: </p>
+      <p id="avgPrice">Average Price: </p>
+      <p id="avgTrust">Average Trust Score: </p>
+    </div>
+
+    <div id="allProperties" class="properties-list">
+      <h2>Properties List</h2>
+      <div id="propertiesList"></div>
+    </div>
+
+    <div class="dashboard-actions">
+      <button onclick="location.href='dashboard.html'">Refresh</button>
+      <button onclick="logout()">Logout</button>
+    </div>
   </div>
-
-  <hr>
-
-  <div id="allProperties">
-    <h2>Properties List</h2>
-    <div id="propertiesList"></div>
-  </div>
-
-  <button onclick="location.href='dashboard.html'">Refresh</button>
-  <button onclick="logout()">Logout</button>
 </body>
 </html>

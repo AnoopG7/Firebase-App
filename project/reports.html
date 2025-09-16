@@ -8,35 +8,40 @@
   <script type="module" src="js/reports.js"></script>
 </head>
 <body>
-  <h1>Reports</h1>
+  <div class="container">
+    <h1 class="center mb-2">Reports</h1>
 
-  <div id="allProperties">
-    <h2>All Properties</h2>
-    <ul id="propertiesList"></ul>
+    <div id="allProperties" class="mb-4">
+      <h2>All Properties</h2>
+      <ul id="propertiesList"></ul>
+    </div>
+
+    <div id="propertyInfo" class="mb-2"></div>
+
+    <form id="reportForm" class="mb-4" style="display:none">
+      <input id="reportedPrice" type="number" placeholder="What do you think is a fair price?" required><br>
+      <label>Trust Score (1 = low trust, 5 = high trust)</label><br>
+      <select id="trustScore">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select><br>
+      <textarea id="feedback" placeholder="Feedback (why)"></textarea><br>
+      <button type="submit">Submit Report</button>
+    </form>
+
+    <div class="reports-list">
+      <h2>Community Reports</h2>
+      <div id="reportsList"></div>
+    </div>
+
+    <div id="aggregates" class="aggregates"></div>
+
+    <div class="center" style="margin-top:32px;">
+      <button onclick="location.href='properties.html'">Back to properties</button>
+    </div>
   </div>
-
-  <div id="propertyInfo"></div>
-
-  <form id="reportForm" style="display:none">
-    <input id="reportedPrice" type="number" placeholder="What do you think is a fair price?" required><br>
-    <label>Trust Score (1 = low trust, 5 = high trust)</label><br>
-    <select id="trustScore">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3" selected>3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select><br>
-    <textarea id="feedback" placeholder="Feedback (why)"></textarea><br>
-    <button type="submit">Submit Report</button>
-  </form>
-
-  <hr>
-  <h2>Community Reports</h2>
-  <div id="reportsList"></div>
-
-  <div id="aggregates"></div>
-
-  <button onclick="location.href='properties.html'">Back to properties</button>
 </body>
 </html>
