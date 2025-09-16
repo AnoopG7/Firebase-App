@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Properties</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <script src="js/firebase-config.js" defer></script>
+  <script src="js/properties.js" defer></script>
+</head>
+<body>
+  <h1>Properties</h1>
+
+  <!-- property form (used for create and edit) -->
+  <form id="propertyForm">
+    <input id="title" placeholder="Title (e.g., 2BHK)" required><br>
+    <textarea id="description" placeholder="Description"></textarea><br>
+    <input id="city" placeholder="City" required>
+    <input id="state" placeholder="State" required>
+    <input id="pincode" placeholder="Pincode"><br>
+    <input id="price" type="number" placeholder="Price" required><br>
+    <select id="type">
+      <option value="sell">Sell</option>
+      <option value="rent">Rent</option>
+    </select>
+    <button id="submitBtn" type="submit">Add Property</button>
+    <button id="cancelEditBtn" type="button" style="display:none">Cancel Edit</button>
+  </form>
+
+  <hr>
+
+  <!-- live listing -->
+  <div id="propertiesList"></div>
+
+  <button onclick="location.href='dashboard.html'">Back</button>
+</body>
+</html>
