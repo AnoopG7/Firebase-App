@@ -1,6 +1,17 @@
+import { 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword, 
+  signOut, 
+  updateProfile, 
+  onAuthStateChanged 
+} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
-// Modular Firebase v9+ imports
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+import { 
+  doc, 
+  setDoc 
+} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+import { auth, db, serverTimestamp } from "./firebase-config.js";
 
 // Register
 const registerForm = document.getElementById("registerForm");
@@ -12,7 +23,17 @@ if (registerForm) {
     const password = document.getElementById("password").value;
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      await updateProfile(userCredential.user, { displayName: name });
+      const user = userCredential.user;
+      
+      // Save profile in Firestore (v9 syntax)
+      await setDoc(doc(db, "users", user.uid), {
+        name,
+        email,
+        role: "buyer",
+        createdAt: serverTimestamp()
+      });
+
+      await updateProfile(user, { displayName: name });
       alert("Registration successful!");
       window.location.href = "dashboard.html";
     } catch (error) {
@@ -44,7 +65,7 @@ window.logout = async function() {
   window.location.href = "login.html";
 }
 
-// Auth state change (to protect dashboard)
+// Protect dashboard
 onAuthStateChanged(auth, (user) => {
   if (!user && window.location.pathname.includes("dashboard.html")) {
     window.location.href = "login.html";
