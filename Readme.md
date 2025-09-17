@@ -7,9 +7,6 @@
 
 ---
 
-
----
-
 ## ✨ Key Features for Users
 
 - **Sign Up & Login:**
@@ -89,7 +86,7 @@
   * **users** collection (auth & roles)
   * **properties** collection (listings, with category: rent or sale)
   * **reports** collection (reports tied to properties)
-* Default entry point is `index.html`, but you can redirect `/` to `dashboard.html` by editing `firebase.json`:
+
 
 ```json
 {
