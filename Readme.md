@@ -1,35 +1,41 @@
+
 # Firebase-App
 
-A Firebase-powered web app for property price transparency.  
-Users can list properties, submit community reports on fair pricing, and view aggregated trust metrics in a global dashboard.  
+**Firebase-App** is a modern web application for property price transparency and community-driven insights. Users can list properties for **rent** or **sale**, submit fair price reports, and view analytics in a global dashboard.
 
-Live Demo → [https://class-6a3ae.web.app/](https://class-6a3ae.web.app/)
+**Live Demo:** [https://class-6a3ae.web.app/](https://class-6a3ae.web.app/)
+
+---
+
 
 ---
 
-## ✨ Features
+## ✨ Key Features for Users
 
-- **Authentication**
-  - Email/password registration and login
-  - Firebase Auth for session management
-- **Property Listings**
-  - Add new properties with title, price, and description
-  - View property details dynamically from Firestore
-- **Community Reports**
-  - Submit reports with fair price, trust score, and feedback
-  - Edit or delete your submitted reports
-- **Aggregated Insights**
-  - Average fair price per property
-  - Average trust score per property
-  - Global dashboard showing metrics across all properties
-- **Dashboard**
-  - Displays all properties and associated reports
-  - Shows overall totals and averages for quick insights
-- **Hosting**
-  - Deployed on Firebase Hosting
-  - Configured with Firestore + Auth + Hosting only (no Functions yet)
+- **Sign Up & Login:**
+  - Secure authentication with email and password (powered by Firebase Auth).
+
+- **List Properties (Rent or Sale):**
+  - Add new properties for rent or sale, including title, price, description, and category.
+  - Instantly view all properties from the Firestore database.
+
+- **Submit Community Reports:**
+  - Share your opinion on fair price, trust score, and feedback for any property.
+  - Edit or delete your own reports at any time.
+
+- **Dashboard & Analytics:**
+  - Visualize property distribution (rent vs sale) with interactive charts.
+  - See top properties by price and aggregated fair price/trust metrics.
+  - Get a quick overview of all listings and reports in one place.
+
+- **Modern UI:**
+  - Clean, responsive design with modular CSS for a seamless experience.
+
+- **Firebase Hosting:**
+  - Fast, secure, and always online.
 
 ---
+
 
 ## 📂 Project Structure
 
@@ -75,48 +81,13 @@ Live Demo → [https://class-6a3ae.web.app/](https://class-6a3ae.web.app/)
 
 ---
 
-## 🚀 Firebase Hosting Setup
-
-1. Install Firebase CLI:
-   ```bash
-   npm install -g firebase-tools
-````
-
-2. Login to Firebase:
-
-   ```bash
-   firebase login
-   ```
-
-3. Initialize Hosting in the project directory:
-
-   ```bash
-   firebase init hosting
-   ```
-
-   * Public directory: `project`
-   * Single Page App rewrite: No
-
-4. Deploy to Firebase Hosting:
-
-   ```bash
-   firebase deploy --only hosting
-   ```
-
----
-
-## 🌐 Live Demo
-
-👉 [https://class-6a3ae.web.app/](https://class-6a3ae.web.app/)
-
----
 
 ## 📝 Notes
 
 * Firestore stores:
 
   * **users** collection (auth & roles)
-  * **properties** collection (listings)
+  * **properties** collection (listings, with category: rent or sale)
   * **reports** collection (reports tied to properties)
 * Default entry point is `index.html`, but you can redirect `/` to `dashboard.html` by editing `firebase.json`:
 
@@ -130,24 +101,5 @@ Live Demo → [https://class-6a3ae.web.app/](https://class-6a3ae.web.app/)
   }
 }
 ```
-
-Then redeploy with:
-
-```bash
-firebase deploy --only hosting
-```
-
 ---
-
-## ⚡ Quick Commands
-
-* Start a new login → `firebase login`
-* Deploy app → `firebase deploy --only hosting`
-* Open Firebase Console → [Firebase Console](https://console.firebase.google.com/)
-
-```
-
-This version highlights **Auth, CRUD, Dashboard, Hosting** in a way that looks like a **portfolio-ready project**.  
-
-Do you also want me to add **screenshots placeholders** (like `![Dashboard Screenshot](screenshots/dashboard.png)`) so you can later just drop images and make it more professional?
 
