@@ -5,6 +5,8 @@
 
 **Live Demo:** [https://class-6a3ae.web.app/](https://class-6a3ae.web.app/)
 
+Link for the phases documentation - https://www.notion.so/MongoDB-Project-2763089cf316808aa8c6cffaaf19ded9?source=copy_link
+
 ---
 
 ## ✨ Key Features for Users

@@ -1,63 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="css/dashboard.css">
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="module" src="js/firebase-config.js"></script>
-  <script type="module" src="js/auth.js"></script>
-  <script type="module" src="js/dashboard.js"></script>
-  <script type="module" src="js/dashboard-charts.js"></script>
-</head>
-<body>
-  <div class="container">
-    <h1 class="dashboard-title" style="margin-bottom:10px;">Dashboard</h1>
-    <nav style="margin-bottom:28px;">
-      <ul class="dashboard-nav">
-        <li><a href="properties.html">Properties (CRUD)</a></li>
-        <li><a href="reports.html">Reports (Community)</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="index.html">Landing Page</a></li>
-      </ul>
-    </nav>
+  <head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+    <script type="module" src="js/dashboard-charts.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="dashboard-title" style="margin-bottom: 10px">Dashboard</h1>
+      <nav style="margin-bottom: 28px">
+        <ul class="dashboard-nav">
+          <li><a href="properties.html">Properties (CRUD)</a></li>
+          <li><a href="reports.html">Reports (Community)</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="index.html">Landing Page</a></li>
+        </ul>
+      </nav>
 
-    <section class="dashboard-section">
-      <h2>Key Metrics</h2>
-      <div id="metrics" class="dashboard-metrics mb-4">
-        <p id="totalProperties">Total Properties: </p>
-        <p id="totalReports">Total Reports: </p>
-        <p id="avgPrice">Average Price: </p>
-        <p id="avgTrust">Average Trust Score: </p>
-      </div>
-    </section>
-
-    <section class="dashboard-section">
-      <h2>Visual Insights</h2>
-      <div class="dashboard-charts">
-        <div class="dashboard-chart-card" style="max-width:320px;">
-          <h3>Properties by Type</h3>
-          <canvas id="chart-properties-type" width="280" height="220"></canvas>
+      <section class="dashboard-section">
+        <h2>Key Metrics</h2>
+        <div id="metrics" class="dashboard-metrics mb-4">
+          <p id="totalProperties">Total Properties:</p>
+          <p id="totalReports">Total Reports:</p>
+          <p id="avgPrice">Average Price:</p>
+          <p id="avgTrust">Average Trust Score:</p>
         </div>
-        <div class="dashboard-chart-card">
-          <h3>Top 5 Properties by Price</h3>
-          <canvas id="chart-properties-price" width="320" height="220"></canvas>
+      </section>
+
+      <section class="dashboard-section">
+        <h2>Visual Insights</h2>
+        <div class="dashboard-charts">
+          <div class="dashboard-chart-card" style="max-width: 320px">
+            <h3>Properties by Type</h3>
+            <canvas
+              id="chart-properties-type"
+              width="280"
+              height="220"
+            ></canvas>
+          </div>
+          <div class="dashboard-chart-card">
+            <h3>Top 5 Properties by Price</h3>
+            <canvas
+              id="chart-properties-price"
+              width="320"
+              height="220"
+            ></canvas>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="dashboard-section">
-      <h2>Properties List</h2>
-      <div id="allProperties" class="properties-list">
-        <div id="propertiesList"></div>
-      </div>
-    </section>
+      <section class="dashboard-section">
+        <h2>Properties List</h2>
+        <div id="allProperties" class="properties-list">
+          <div id="propertiesList"></div>
+        </div>
+      </section>
 
-    <div class="dashboard-actions">
-      <button onclick="location.href='dashboard.html'">Refresh</button>
-      <button onclick="logout()">Logout</button>
+      <div class="dashboard-actions">
+        <button onclick="location.href='dashboard.html'">Refresh</button>
+        <button onclick="logout()">Logout</button>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

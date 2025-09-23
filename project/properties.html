@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Properties</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script type="module" src="js/firebase-config.js"></script>
-  <script type="module" src="js/properties.js"></script>
-</head>
-<body>
-  <div class="container">
-    <h1 class="center mb-2">Properties</h1>
+  <head>
+    <meta charset="utf-8" />
+    <title>Properties</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/properties.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center mb-2">Properties</h1>
 
-    <form id="propertyForm" class="mb-4">
-      <input id="propTitle" type="text" placeholder="Property Title" required><br>
-      <input id="propPrice" type="number" placeholder="Price" required><br>
-      <textarea id="propDescription" placeholder="Description"></textarea><br>
-      <label for="propCategory" style="font-size:0.98rem; color:#444;">Category:</label>
-      <select id="propCategory" required>
-        <option value="rent">Rent</option>
-        <option value="sale">Sale</option>
-      </select><br>
-      <button type="submit">Add / Update Property</button>
-    </form>
+      <form id="propertyForm" class="mb-4">
+        <input
+          id="propTitle"
+          type="text"
+          placeholder="Property Title"
+          required
+        /><br />
+        <input
+          id="propPrice"
+          type="number"
+          placeholder="Price"
+          required
+        /><br />
+        <textarea id="propDescription" placeholder="Description"></textarea
+        ><br />
+        <label for="propCategory" style="font-size: 0.98rem; color: #444"
+          >Category:</label
+        >
+        <select id="propCategory" required>
+          <option value="rent">Rent</option>
+          <option value="sale">Sale</option></select
+        ><br />
+        <button type="submit">Add / Update Property</button>
+      </form>
 
-    <div class="properties-list">
-      <h2>All Properties</h2>
-      <div id="propertiesList"></div>
+      <div class="properties-list">
+        <h2>All Properties</h2>
+        <div id="propertiesList"></div>
+      </div>
+
+      <div class="center" style="margin-top: 32px">
+        <button onclick="location.href='dashboard.html'">
+          Back to Dashboard
+        </button>
+      </div>
     </div>
-
-    <div class="center" style="margin-top:32px;">
-      <button onclick="location.href='dashboard.html'">Back to Dashboard</button>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
